@@ -1,0 +1,27 @@
+/* Light */
+
+.history {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 359px;
+  top: 59px;
+  color: rgba(55, 55, 55, 0.8);
+  z-index: 10;
+}
+
+.historyIcon {
+  width: 24.43px;
+  height: 25.2px;
+  top: 2.4px;
+  left: 2.7px;
+  position: absolute;
+  left: 9.28%;
+  right: 9.28%;
+  top: 8.01%;
+  bottom: 8.01%;
+  color: rgba(55, 55, 55, 0.8);
+  z-index: 10;
+}
+
+/* Dark */

@@ -1,0 +1,66 @@
+/* Light */
+
+.operations {
+  position: absolute;
+  width: 355px;
+  height: 35px;
+  left: 34px;
+  top: 237px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  justify-content: flex-end;
+
+  color: rgba(55, 55, 55, 0.5);
+  z-index: 10;
+}
+
+.equalIconContainer {
+  position: absolute;
+  left: 34px;
+  top: 272px;
+  width: 70px;
+  height: 70px;
+  z-index: 10;
+}
+
+.equalIcon {
+  font-family: Poppins;
+  font-size: 26px;
+  margin: 30px 27px;
+  font-weight: 600;
+  line-height: 39px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  color: #373737;
+  z-index: 10;
+}
+
+.result {
+  position: absolute;
+  width: 165px;
+  height: 70px;
+  left: 224px;
+  top: 272px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  justify-content: flex-end;
+
+  color: #373737;
+  z-index: 10;
+}
+
+/* Dark */

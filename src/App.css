@@ -1,0 +1,19 @@
+/* Light */
+
+.calculator {
+  position: relative;
+  width: 423px;
+  height: 858px;
+
+  background: linear-gradient(
+    166.34deg,
+    #fefefe 0%,
+    #f9f9f9 12.84%,
+    #f3f3f3 32.53%,
+    #e5e5e5 100%
+  );
+  border-radius: 40px;
+  z-index: 10;
+}
+
+/* Dark */

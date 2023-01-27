@@ -1,0 +1,67 @@
+/* Light */
+
+.toggle {
+  position: absolute;
+  width: 122px;
+  height: 44px;
+  left: 151px;
+  top: 52px;
+
+  filter: drop-shadow(0px 0px 20px rgba(129, 129, 129, 0.15));
+}
+
+.rectangle1 {
+  position: absolute;
+  width: 122px;
+  height: 44px;
+  left: 151px;
+  top: 52px;
+
+  background: #a9dcfd;
+  border-radius: 40px;
+  z-index: 8;
+}
+
+.rectangle2 {
+  position: absolute;
+  width: 68px;
+  height: 44px;
+  /* left: 151px; */
+  top: 52px;
+  background: #d8eeff;
+  border-radius: 40px;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.sun {
+  position: absolute;
+  width: 29.74px;
+  height: 29.74px;
+  left: 168px;
+  top: 59px;
+  z-index: 10;
+
+  color: rgba(55, 55, 55, 0.8);
+}
+
+.moonContainer {
+  position: absolute;
+  width: 29.74px;
+  height: 29.74px;
+  left: 226px;
+  top: 59px;
+}
+
+.moon {
+  position: absolute;
+  width: 24.39px;
+  height: 24.4px;
+  left: 7.69%;
+  right: 10.3%;
+  top: 7.69%;
+  bottom: 10.27%;
+  z-index: 10;
+}
+
+/* Dark */

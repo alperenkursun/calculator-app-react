@@ -1,7 +1,22 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
-function Buttons({ isDark }) {
+function Buttons({
+  isDark,
+  operationsInterface,
+  setOperationsInterface,
+  isNumberInput,
+  setIsNumberInput,
+  isOperation,
+  setIsOperation,
+  operationArray,
+  setOperationArray,
+  number,
+  setNumber,
+  setResult,
+}) {
+  useEffect(() => {}, [number, setOperationArray, operationArray]);
+
   return (
     <>
       <div className={styles.buttonMainContainer}></div>
@@ -9,6 +24,9 @@ function Buttons({ isDark }) {
         className={styles.percentage}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          return isNumberInput && {};
         }}
       >
         %
@@ -18,6 +36,9 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          return isNumberInput && {};
+        }}
       >
         +/-
       </div>
@@ -25,6 +46,10 @@ function Buttons({ isDark }) {
         className={styles.ac}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          setNumber("");
+          setResult("0");
         }}
       >
         AC
@@ -34,13 +59,23 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          setIsNumberInput(true);
+
+          setNumber(number + "3");
+        }}
       >
-        3
+        3{/* işaret */}
       </div>
       <div
         className={styles.two}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          setNumber(number + "2");
+
+          setIsNumberInput(true);
         }}
       >
         2
@@ -50,6 +85,11 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          setIsNumberInput(true);
+
+          setNumber(number + "1");
+        }}
       >
         1
       </div>
@@ -57,6 +97,11 @@ function Buttons({ isDark }) {
         className={styles.six}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          setIsNumberInput(true);
+
+          setNumber(number + "6");
         }}
       >
         6
@@ -66,6 +111,11 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          setIsNumberInput(true);
+
+          setNumber(number + "5");
+        }}
       >
         5
       </div>
@@ -73,6 +123,11 @@ function Buttons({ isDark }) {
         className={styles.four}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          setIsNumberInput(true);
+
+          setNumber(number + "4");
         }}
       >
         4
@@ -82,6 +137,11 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          setIsNumberInput(true);
+
+          setNumber(number + "9");
+        }}
       >
         9
       </div>
@@ -89,6 +149,11 @@ function Buttons({ isDark }) {
         className={styles.eight}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          setIsNumberInput(true);
+
+          setNumber(number + "8");
         }}
       >
         8
@@ -98,6 +163,10 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          setIsNumberInput(true);
+          setNumber(number + "7");
+        }}
       >
         7
       </div>
@@ -105,6 +174,11 @@ function Buttons({ isDark }) {
         className={styles.times}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          isNumberInput && setNumber(number + " × ");
+
+          setIsNumberInput(false);
         }}
       >
         ×
@@ -114,6 +188,11 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          isNumberInput && setNumber(number + " - ");
+
+          setIsNumberInput(false);
+        }}
       >
         -
       </div>
@@ -121,6 +200,11 @@ function Buttons({ isDark }) {
         className={styles.plus}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          isNumberInput && setNumber(number + " + ");
+
+          setIsNumberInput(false);
         }}
       >
         {" "}
@@ -131,6 +215,16 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          if (isNumberInput) {
+            let string = number;
+            string = string.replaceAll("×", "*");
+            string = string.replaceAll("÷", "/");
+            console.log(string);
+            let r = eval(string);
+            setResult(r.toFixed(2));
+          }
+        }}
       >
         =
       </div>
@@ -138,6 +232,9 @@ function Buttons({ isDark }) {
         className={styles.twoZero}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          return isNumberInput && setNumber(number + "00");
         }}
       >
         00
@@ -147,6 +244,9 @@ function Buttons({ isDark }) {
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
         }}
+        onClick={() => {
+          return isNumberInput && setNumber(number + "0");
+        }}
       >
         0
       </div>
@@ -154,6 +254,9 @@ function Buttons({ isDark }) {
         className={styles.dot}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          return isNumberInput && {};
         }}
       >
         .
@@ -277,6 +380,11 @@ function Buttons({ isDark }) {
         className={styles.div}
         style={{
           color: isDark ? "#FBFBFB" : "#373737",
+        }}
+        onClick={() => {
+          isNumberInput && setNumber(number + " ÷ ");
+
+          setIsNumberInput(false);
         }}
       >
         {" "}

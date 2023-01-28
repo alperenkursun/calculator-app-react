@@ -1,7 +1,21 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
-function Operations({ isDark }) {
+function Operations({
+  isDark,
+  operationArray,
+  setOperationArray,
+  number,
+  result,
+}) {
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  // const [isMount, setIsMount] = useState(false);
+
+  useEffect(() => {}, [operationArray]);
+
   return (
     <>
       <div
@@ -10,7 +24,12 @@ function Operations({ isDark }) {
           color: isDark ? "rgba(251, 251, 251, 0.5)" : "rgba(55, 55, 55, 0.5)",
         }}
       >
-        1.000 × 2 + 2 × 2{" "}
+        {numberWithCommas(number)}
+        {/* {array.map((item) =>
+          item.isNegative
+            ? `(${numberWithCommas(item)})`
+            : `${numberWithCommas(item)}`
+        )} */}
       </div>
       <div className={styles.equalIconContainer}>
         {isDark ? (
@@ -49,7 +68,7 @@ function Operations({ isDark }) {
           color: isDark ? "#FBFBFB" : "#373737",
         }}
       >
-        2004
+        {numberWithCommas(result.toString().replaceAll(".", ","))}
       </div>
     </>
   );

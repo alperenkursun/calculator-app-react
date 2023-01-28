@@ -1,5 +1,3 @@
-/* Light */
-
 .history {
   position: absolute;
   width: 30px;
@@ -22,6 +20,5 @@
   bottom: 8.01%;
   color: rgba(55, 55, 55, 0.8);
   z-index: 10;
+  cursor: pointer;
 }
-
-/* Dark */

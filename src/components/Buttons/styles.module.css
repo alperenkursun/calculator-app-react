@@ -1,5 +1,3 @@
-/* Light */
-
 .buttonMainContainer {
   position: absolute;
   width: 423px;
@@ -29,6 +27,7 @@
   color: #373737;
 
   z-index: 10;
+  cursor: pointer;
 }
 
 .plusMines {
@@ -52,6 +51,7 @@
   color: #373737;
 
   z-index: 10;
+  cursor: pointer;
 }
 
 .ac {
@@ -75,6 +75,7 @@
   color: #373737;
 
   z-index: 10;
+  cursor: pointer;
 }
 
 .three {
@@ -98,6 +99,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .two {
@@ -121,6 +123,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .one {
@@ -144,6 +147,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .six {
@@ -167,6 +171,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .five {
@@ -190,6 +195,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .four {
@@ -213,6 +219,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .nine {
@@ -236,6 +243,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .eight {
@@ -259,6 +267,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .seven {
@@ -282,6 +291,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .times {
@@ -304,6 +314,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .mines {
@@ -327,6 +338,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .plus {
@@ -350,6 +362,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .equal {
@@ -372,6 +385,7 @@
   color: #373737;
 
   z-index: 10;
+  cursor: pointer;
 }
 
 .twoZero {
@@ -395,6 +409,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .zero {
@@ -418,6 +433,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .dot {
@@ -441,6 +457,7 @@
   color: #373737;
 
   z-index: 9;
+  cursor: pointer;
 }
 
 .frame3 {
@@ -629,7 +646,7 @@
   top: 351px;
 
   filter: drop-shadow(0px -5px 70px rgba(0, 0, 0, 0.1));
-  border-radius: 30px;
+  border-radius: 40px;
   z-index: 7;
   overflow: hidden;
 }
@@ -679,5 +696,3 @@
 
   z-index: 1;
 }
-
-/* Dark */

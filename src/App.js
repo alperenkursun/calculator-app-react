@@ -1,32 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import Buttons from "./components/Buttons";
 import History from "./components/History";
+import HistoryDetail from "./components/HistoryDetail";
 import Operations from "./components/Operations";
 import Toggle from "./components/Toggle";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
-  const [operationsInterface, setOperationsInterface] = useState("");
   const [isNumberInput, setIsNumberInput] = useState(false);
-  const [isOperation, setIsOperation] = useState(false);
   const [operationArray, setOperationArray] = useState([""]);
   const [number, setNumber] = useState("");
-  const [result, setResult] = useState("");
-
-  useEffect(() => {
-    console.log(operationArray, "Operation Array");
-  }, [operationArray]);
-
-  // let array = [
-  //   { value: 5000, isNegative: false },
-  //   { value: "+", isNegative: false },
-  //   { value: -5000, isNegative: true },
-  //   { value: "-", isNegative: false },
-  //   { value: -5000, isNegative: true },
-  // ];
-
-  // console.log(array, "array");
+  const [result, setResult] = useState("0");
+  const [history, setHistory] = useState([]);
+  const [historyDisplay, setHistoryDisplay] = useState(true);
 
   return (
     <div
@@ -38,7 +25,16 @@ function App() {
       }}
     >
       <Toggle isDark={isDark} setIsDark={setIsDark} />
-      <History isDark={isDark} />
+      <History
+        isDark={isDark}
+        setHistoryDisplay={setHistoryDisplay}
+        historyDisplay={historyDisplay}
+      />
+      <HistoryDetail
+        history={history}
+        isDark={isDark}
+        historyDisplay={historyDisplay}
+      />
       <Operations
         isDark={isDark}
         operationArray={operationArray}
@@ -48,17 +44,15 @@ function App() {
       />
       <Buttons
         isDark={isDark}
-        operationsInterface={operationsInterface}
-        setOperationsInterface={setOperationsInterface}
         isNumberInput={isNumberInput}
         setIsNumberInput={setIsNumberInput}
-        isOperation={isOperation}
-        setIsOperation={setIsOperation}
         operationArray={operationArray}
         setOperationArray={setOperationArray}
         number={number}
         setNumber={setNumber}
         setResult={setResult}
+        history={history}
+        setHistory={setHistory}
       />
     </div>
   );

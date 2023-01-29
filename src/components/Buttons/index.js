@@ -1,21 +1,23 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./styles.module.css";
 
 function Buttons({
   isDark,
-  operationsInterface,
-  setOperationsInterface,
   isNumberInput,
   setIsNumberInput,
-  isOperation,
-  setIsOperation,
   operationArray,
   setOperationArray,
   number,
   setNumber,
   setResult,
+  history,
+  setHistory,
 }) {
   useEffect(() => {}, [number, setOperationArray, operationArray]);
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
 
   return (
     <>
@@ -26,7 +28,18 @@ function Buttons({
           color: isDark ? "#FBFBFB" : "#373737",
         }}
         onClick={() => {
-          return isNumberInput && {};
+          if (isNumberInput) {
+            let string = number;
+            string = string.split(" ");
+            if (string.length > 2) {
+              string[string.length - 1] =
+                (parseInt(string[string.length - 1]) *
+                  parseInt(string[string.length - 3])) /
+                100;
+              string = string.join(" ");
+              setNumber(string);
+            }
+          }
         }}
       >
         %
@@ -37,7 +50,13 @@ function Buttons({
           color: isDark ? "#FBFBFB" : "#373737",
         }}
         onClick={() => {
-          return isNumberInput && {};
+          if (isNumberInput) {
+            let string = number;
+            string = string.split(" ");
+            string[string.length - 1] = `(-${string[string.length - 1]})`;
+            string = string.join(" ");
+            setNumber(string);
+          }
         }}
       >
         +/-
@@ -65,7 +84,7 @@ function Buttons({
           setNumber(number + "3");
         }}
       >
-        3{/* işaret */}
+        3
       </div>
       <div
         className={styles.two}
@@ -220,9 +239,14 @@ function Buttons({
             let string = number;
             string = string.replaceAll("×", "*");
             string = string.replaceAll("÷", "/");
-            console.log(string);
             let r = eval(string);
             setResult(r.toFixed(2));
+            let editR = r.toFixed(2).replace(".", ",");
+            let editString = number.replaceAll(".", ",");
+            let historyString = `${numberWithCommas(
+              editString
+            )} = ${numberWithCommas(editR)}`;
+            setHistory([...history, historyString]);
           }
         }}
       >

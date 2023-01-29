@@ -1,18 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./styles.module.css";
 
-function Operations({
-  isDark,
-  operationArray,
-  setOperationArray,
-  number,
-  result,
-}) {
+function Operations({ isDark, operationArray, number, result }) {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
-
-  // const [isMount, setIsMount] = useState(false);
 
   useEffect(() => {}, [operationArray]);
 
@@ -25,11 +17,6 @@ function Operations({
         }}
       >
         {numberWithCommas(number)}
-        {/* {array.map((item) =>
-          item.isNegative
-            ? `(${numberWithCommas(item)})`
-            : `${numberWithCommas(item)}`
-        )} */}
       </div>
       <div className={styles.equalIconContainer}>
         {isDark ? (
@@ -43,7 +30,7 @@ function Operations({
           >
             <path
               d="M15.0683 0.038V3.21H0.898344V0.038H15.0683ZM15.0683 6.278V9.45H0.898344V6.278H15.0683Z"
-              fill="#FBFBFB"
+              fillOpacity="#FBFBFB"
             />
           </svg>
         ) : (

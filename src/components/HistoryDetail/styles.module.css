@@ -1,0 +1,32 @@
+.historyDetail {
+  position: absolute;
+  left: 422.997px;
+  top: 59px;
+  min-height: 200px;
+  height: max-content !important;
+  width: 200px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.header {
+  color: rgb(55, 55, 55);
+  font-size: 22px;
+  padding: 10px;
+  text-align: center;
+}
+
+.operations {
+  color: rgb(55, 55, 55);
+  font-size: 15px;
+  padding: 10px;
+  text-align: start;
+}
+
+ul {
+  padding: 0 24px;
+}
+
+ul li {
+  list-style-type: circle;
+}
